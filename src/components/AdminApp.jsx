@@ -7,7 +7,7 @@ import simpleRestProvider from "ra-data-simple-rest";
 import httpClient from "../../utils/httpClient";
 
 const dataProvider = simpleRestProvider(
-  "http://134.213.49.117:3001/api",
+  NEXT_PUBLIC_API_SERVER,
   httpClient
 );
 
