@@ -1,14 +1,16 @@
-import { Admin, Resource, EditGuesser, ShowGuesser } from "react-admin";
+import { Admin, Resource } from "react-admin";
 import { dataProvider } from "./dataProvider";
-import { TotalList } from "./components/TotalList";
+import { ConnectionList } from "./components/ConnectionList";
+import { ConnectionShow } from "./components/ConnectionShow";
+import { ConnectionEdit } from "./components/ConnectionEdit";
 
 export const App = () => (
   <Admin dataProvider={dataProvider}>
     <Resource
       name="activeConnections"
-      list={TotalList}
-      show={ShowGuesser}
-      edit={EditGuesser}
+      list={ConnectionList}
+      show={ConnectionShow}
+      edit={ConnectionEdit}
       options={{ label: "ActiveConnections" }}
     />
   </Admin>

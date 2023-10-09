@@ -1,26 +1,14 @@
 import {
-  List,
-  Datagrid,
-  TextField,
-  NumberField,
   DateField,
-  DateInput,
-  NumberInput,
+  NumberField,
+  Show,
+  SimpleShowLayout,
+  TextField,
 } from "react-admin";
 
-const userFilters = [
-  <DateInput
-    key="dateInput"
-    label="DateStamp"
-    source="DatestampUTC"
-    defaultValue="2023-10-04"
-  />,
-  <NumberInput key="size" label="Size" source="bytesTx" />,
-];
-
-export const TotalList = (props: any) => (
-  <List {...props} filters={userFilters}>
-    <Datagrid rowClick="edit">
+export const ConnectionShow = () => (
+  <Show>
+    <SimpleShowLayout>
       <TextField label="ID" source="id" />
       <DateField label="Start Time" source="startTimestampUTC" />
       <TextField label="IpAddress" source="ipAddress" />
@@ -31,6 +19,6 @@ export const TotalList = (props: any) => (
       <TextField label="FileName" source="fileName" />
       <TextField label="SerialNo" source="serialNo" />
       <DateField label="DateStamp" source="DatestampUTC" />
-    </Datagrid>
-  </List>
+    </SimpleShowLayout>
+  </Show>
 );
