@@ -1,4 +1,4 @@
-# your-admin-name
+# test
 
 ## Installation
 
@@ -26,7 +26,10 @@ yarn build
 
 ## DataProvider
 
-The included data provider use [ra-data-simple-rest](https://github.com/marmelab/react-admin/tree/master/packages/ra-data-simple-rest). It fits REST APIs using simple GET parameters for filters and sorting. This is the dialect used for instance in [FakeRest](https://github.com/marmelab/FakeRest).
+The included data provider use [FakeREST](https://github.com/marmelab/fakerest) to simulate a backend.
+You'll find a `data.json` file in the `src` directory that includes some fake data for testing purposes.
 
-You'll find an `.env` file at the project root that includes a `VITE_JSON_SERVER_URL` variable. Set it to the URL of your backend.
+It includes two resources, posts and comments.
+Posts have the following properties: `id`, `title` and `content`.
+Comments have the following properties: `id`, `post_id` and `content`.
 

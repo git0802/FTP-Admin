@@ -4,18 +4,18 @@ import {
   TextField,
   NumberField,
   DateField,
-  DateInput,
   NumberInput,
+  TextInput,
 } from "react-admin";
 
 const userFilters = [
-  <DateInput
-    key="dateInput"
-    label="DateStamp"
-    source="DatestampUTC"
-    defaultValue="2023-10-04"
+  <TextInput
+    key="ipAddress"
+    label="IpAddress"
+    source="ipAddress"
+    defaultValue=""
   />,
-  <NumberInput key="size" label="Size" source="bytesTx" />,
+  <NumberInput key="port" label="Port" source="port" />,
 ];
 
 export const ConnectionList = (props: any) => (
