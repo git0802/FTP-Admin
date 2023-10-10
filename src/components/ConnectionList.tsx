@@ -6,9 +6,11 @@ import {
   DateField,
   NumberInput,
   TextInput,
+  SearchInput,
 } from "react-admin";
 
 const userFilters = [
+  <SearchInput key="q" source="q" alwaysOn />,
   <TextInput
     key="ipAddress"
     label="IpAddress"
