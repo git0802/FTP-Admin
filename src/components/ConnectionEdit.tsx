@@ -13,7 +13,6 @@ export const ConnectionEdit = () => (
       <DateInput label="Start Time" source="startTimestampUTC" />
       <TextInput label="IpAddress" source="ipAddress" />
       <NumberInput label="Port" source="port" />
-      <DateInput label="End Time" source="endTimestampUTC" />
       <NumberInput label="Size" source="bytesTx" />
       <TextInput label="Disconnect Reason" source="disconnectReason" />
       <TextInput label="FileName" source="fileName" />
