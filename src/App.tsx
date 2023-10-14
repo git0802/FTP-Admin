@@ -8,9 +8,15 @@ import { ConnectionEdit } from "./components/ConnectionEdit";
 
 export const App = () => {
   const [dataProvider, setDataProvider] = useState();
+  const [timer, setTimer] = useState(0);
+
+  setInterval(() => {
+    setTimer(Math.random());
+  }, 60000);
+
   useEffect(() => {
     data();
-  }, []);
+  }, [timer]);
 
   const data = async () => {
     let res = await fetch("http://134.213.49.117:3001/api/activeconnections/");
