@@ -24,7 +24,7 @@ export const App = () => {
     const fetchInterval = setInterval(() => {
       // Set interval
       data();
-    }, 6000);
+    }, 60000);
 
     return () => clearInterval(fetchInterval); // Clear interval on component unmount
   }, []);
