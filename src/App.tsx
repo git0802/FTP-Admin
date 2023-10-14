@@ -10,15 +10,22 @@ export const App = () => {
   const [dataProvider, setDataProvider] = useState();
 
   useEffect(() => {
-    const fetchInterval = setInterval(async () => {
-      // Set interval
+    const data = async () => {
       let res = await fetch(
         "http://134.213.49.117:3001/api/activeconnections/"
       );
       let jsData = await res.json();
       let dataPro: any = fakeRestDataProvider(jsData, true);
       setDataProvider(dataPro);
-    }, 60000); // Fetch data every 60 seconds
+      console.log("1");
+    };
+
+    data();
+
+    const fetchInterval = setInterval(() => {
+      // Set interval
+      data();
+    }, 6000);
 
     return () => clearInterval(fetchInterval); // Clear interval on component unmount
   }, []);
