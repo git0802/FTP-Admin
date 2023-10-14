@@ -21,7 +21,11 @@ const userFilters = [
 ];
 
 export const ConnectionList = (props: any) => (
-  <List {...props} filters={userFilters}>
+  <List
+    {...props}
+    filters={userFilters}
+    queryOptions={{ refetchInterval: 60000 }}
+  >
     <Datagrid rowClick="edit">
       <TextField label="ID" source="id" />
       <DateField label="Start Time" source="startTimestampUTC" showTime />
