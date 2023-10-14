@@ -8,22 +8,20 @@ import { ConnectionEdit } from "./components/ConnectionEdit";
 
 export const App = () => {
   const [dataProvider, setDataProvider] = useState();
-  const [timer, setTimer] = useState(0);
-
-  setInterval(() => {
-    setTimer(Math.random());
-  }, 60000);
 
   useEffect(() => {
-    data();
-  }, [timer]);
+    const fetchInterval = setInterval(async () => {
+      // Set interval
+      let res = await fetch(
+        "http://134.213.49.117:3001/api/activeconnections/"
+      );
+      let jsData = await res.json();
+      let dataPro: any = fakeRestDataProvider(jsData, true);
+      setDataProvider(dataPro);
+    }, 60000); // Fetch data every 60 seconds
 
-  const data = async () => {
-    let res = await fetch("http://134.213.49.117:3001/api/activeconnections/");
-    let jsData = await res.json();
-    let dataPro: any = fakeRestDataProvider(jsData, true);
-    setDataProvider(dataPro);
-  };
+    return () => clearInterval(fetchInterval); // Clear interval on component unmount
+  }, []);
 
   return (
     <>
