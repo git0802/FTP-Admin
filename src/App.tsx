@@ -17,7 +17,6 @@ export const App = () => {
       let jsData = await res.json();
       let dataPro: any = fakeRestDataProvider(jsData, true);
       setDataProvider(dataPro);
-      console.log("1");
     };
 
     data();
