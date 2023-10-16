@@ -24,7 +24,7 @@ export const ConnectionList = (props: any) => (
   <List
     {...props}
     filters={userFilters}
-    queryOptions={{ refetchInterval: 60000 }}
+    queryOptions={{ refetchInterval: 10000 }}
   >
     <Datagrid rowClick="edit">
       <TextField label="ID" source="id" />
